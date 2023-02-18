@@ -1,0 +1,113 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tongasoa eto @ Laoka anio{% endblock %}
+
+{% block body %}
+
+    <div class="container d-flex justify-content-center align-items-center h-100">
+        <div class="text-center">
+            <h1 class="fw-bold">Laoka anio</h1>
+            <h4>
+                {% for mlg in malagasy_day %}
+                    {% if day == mlg.name %}
+                        {{ mlg.traduction }}
+                    {% endif %}
+                {% endfor %}
+                {{ date }}
+                {% for mlg in malagasy_month %}
+                    {% if month == mlg.name %}
+                        {{ mlg.traduction }}
+                    {% endif %}
+                {% endfor %}
+                {{ year }}
+            </h4>
+            <p class="mt-3">Leo ny mitady laoka isan'andro? Tsindrio ny bokotra</p>
+            <a type="button" class="btn btn-primary mb-3" style="width: 300px" id="randomBtn">
+                <span id="randomBtnText">Hisafidy</span>
+                <div id="randomBtnSpinner" class="spinner-border spinner-border-sm text-light" hidden>
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </a>
+            <h2 class="mb-3" id="randomResult"></h2>
+            {% if(connected == true) %}
+            <a href="{{ path('add_plat') }}" class="text-decoration-none mt-3">Hanampy laoka vaovao</a><br>
+            <a href="{{ path('plat_list') }}" class="text-decoration-none mt-3">Hijery ny laoka rehetra misy</a>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="fixed-top text-center d-flex justify-content-between bg-dark px-3 languages">
+        <div class="">
+            {% if(connected == false) %}
+            <a href="{{ path('login') }}" class="text-decoration-none">Connexion</a>
+            {% else %}
+            <a href="{{ path('logout') }}" class="text-decoration-none">Déconnexion</a>
+            {% endif %}
+        </div>
+        <div class="">
+            <a href="" class="text-decoration-none me-3">Français</a>
+            <a href="{{ path('delete_plat', {id: 6}) }}" class="text-decoration-none">Malagasy</a>
+        </div>
+    </div>
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ encore_entry_script_tags('custom') }}
+{% endblock %}
+
+{#<nav class="navbar navbar-expand-lg navbar-light bg-default shadow" style="height: 75px;">#}
+{#    <div class="container">#}
+{#        <a href="#" class="navbar-brand">OWL</a>#}
+
+{#        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">#}
+{#            <span class="navbar-toggler-icon"></span>#}
+{#        </button>#}
+
+{#        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">#}
+{#            <ul class="nav navbar-nav">#}
+{#                <li class="nav-item ms-2"><a class="nav-link" href="<?= base_url('/') ?>">Acceuil</a></li>#}
+{#                <li class="nav-item ms-2"><a class="nav-link" href="">Matières</a></li>#}
+{#                <li class="nav-item ms-2"><a class="nav-link" href="">Catégorie</a></li>#}
+{#                <li class="nav-item ms-2"><a class="nav-link" href="">Panier</a></li>#}
+
+{#                <div class="topbar-divider d-none d-sm-block"></div>#}
+
+{#                <li class="nav-item dropdown ms-4">#}
+{#                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">#}
+{#                        <img class="img-profile rounded-circle me-3" src="<?= base_url('img/uploads/' . $data['chemin']) ?>" style="object-fit: cover; height: 2rem; width: 2rem">#}
+{#                        <?= $data['prenom']; ?>#}
+{#                        <?= $data['nom']; ?>#}
+{#                    </a>#}
+{#                    <ul class="dropdown-menu" aria-labelledby="userDropdown" id="usDropdown">#}
+{#                        <li><a class="dropdown-item" href="#">Créer un CV</a></li>#}
+{#                        <li><a class="dropdown-item" href="#">Paramètre du compte</a></li>#}
+{#                        <li>#}
+{#                            <hr class="dropdown-divider">#}
+{#                        </li>#}
+{#                        <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Déconnexion</a></li>#}
+{#                    </ul>#}
+{#                </li>#}
+{#            </ul>#}
+{#        </div>#}
+
+{#    </div>#}
+{#</nav>#}
+
+{#<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">#}
+{#    <div class="modal-dialog" role="document">#}
+{#        <div class="modal-content">#}
+{#            <div class="modal-header border-bottom-0">#}
+{#                <h5 class="modal-title" id="exampleModalLabel">Déconnexion</h5>#}
+{#                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>#}
+{#            </div>#}
+{#            <div class="modal-body">#}
+{#                <p>Voullez vous vraiment vous déconnecter?</p>#}
+{#            </div>#}
+{#            <div class="modal-footer border-top-0">#}
+{#                <a class="btn" href="#">Déconnecter</a>#}
+{#                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}

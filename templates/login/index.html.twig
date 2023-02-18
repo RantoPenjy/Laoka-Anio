@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello LoginController!{% endblock %}
+
+{% block body %}
+    <div class="container d-flex justify-content-center align-items-center h-100">
+        <div class="text-center">
+            <a class="text-decoration-none d-flex align-self-start align-items-center mb-2" href="{{ path('homepage') }}">
+                <i class="fas fa-chevron-left fa-sm me-2"></i>Hiverina
+            </a>
+            <h1 class="mb-4">Connexion</h1>
+
+            {{ form_start(form) }}
+
+            <div class="row form-group mb-3">
+                <div class="col-xxl-12 d-flex align-self-start mb-2">
+                    {{ form_label(form.email, "Email") }}
+                </div>
+                <div class="col-xxl-12">
+                    {{ form_widget(form.email, {'attr': {'class': 'form-control', 'placeholder': "Ampidiro ny mailaka"}}) }}
+                </div>
+            </div>
+            <div class="row form-group mb-3">
+                <div class="col-xxl-12 d-flex align-self-start mb-2">
+                    {{ form_label(form.password, "Mot de passe", ) }}
+                </div>
+                <div class="col-xxl-12">
+                    {{ form_widget(form.password, {'attr': {'class': 'form-control', 'placeholder': "Ampidiro ny tenimiafina", 'type': 'password'}}) }}
+                </div>
+            </div>
+
+            <button class="btn btn-primary form-control" type="submit">Connexion</button>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}

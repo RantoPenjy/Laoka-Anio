@@ -1,0 +1,88 @@
+<?php
+
+namespace App\Constant;
+
+class DateConstant
+{
+    public const MY_MALAGASY_DAY = array(
+        array(
+            'name'=>'Monday',
+            'traduction'=>'Alatsinainy'
+        ),
+        array(
+            'name'=>'Tuesday',
+            'traduction'=>'Talata'
+        ),
+        array(
+            'name'=>'Wednesday',
+            'traduction'=>'Alarobia'
+        ),
+        array(
+            'name'=>'Thursday',
+            'traduction'=>'Alakamisy'
+        ),
+        array(
+            'name'=>'Friday',
+            'traduction'=>'Zoma'
+        ),
+        array(
+            'name'=>'Saturday',
+            'traduction'=>'Sabotsy'
+        ),
+        array(
+            'name'=>'Sunday',
+            'traduction'=>'Alahady'
+        )
+    );
+
+    public const MY_MALAGASY_MONTH = array(
+        array(
+            'name'=>'January',
+            'traduction'=>'Janoary'
+        ),
+        array(
+            'name'=>'February',
+            'traduction'=>'Febroary'
+        ),
+        array(
+            'name'=>'March',
+            'traduction'=>'Martsa'
+        ),
+        array(
+            'name'=>'April',
+            'traduction'=>'Aprily'
+        ),
+        array(
+            'name'=>'Mey',
+            'traduction'=>'May'
+        ),
+        array(
+            'name'=>'June',
+            'traduction'=>'Jona'
+        ),
+        array(
+            'name'=>'July',
+            'traduction'=>'Jolay'
+        ),
+        array(
+            'name'=>'August',
+            'traduction'=>'Aogositra'
+        ),
+        array(
+            'name'=>'September',
+            'traduction'=>'Septambra'
+        ),
+        array(
+            'name'=>'October',
+            'traduction'=>'Oktobra'
+        ),
+        array(
+            'name'=>'November',
+            'traduction'=>'Novambra'
+        ),
+        array(
+            'name'=>'December',
+            'traduction'=>'Desambra'
+        ),
+    );
+}

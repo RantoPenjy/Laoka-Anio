@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Laoka vaovao{% endblock %}
+
+{% block body %}
+
+    <div class="container d-flex justify-content-center align-items-center h-100">
+        <div class="text-center">
+            <a class="text-decoration-none d-flex align-self-start align-items-center mb-2" href="{{ path('homepage') }}">
+                <i class="fas fa-chevron-left fa-sm me-2"></i>Hiverina
+            </a>
+            <h1 class="mb-4">Hanampy laoka vaovao</h1>
+
+            {{ form_start(form) }}
+
+                <div class="row form-group mb-3">
+                    <div class="col-xxl-12 d-flex align-self-start mb-2">
+                        {{ form_label(form.name, "Anaran'ny laoka") }}
+                    </div>
+                    <div class="col-xxl-12">
+                        {{ form_widget(form.name, {'attr': {'class': 'form-control', 'placeholder': "Ampidiro ny anaran'ny laoka"}}) }}
+                    </div>
+                </div>
+                <div class="row form-group mb-3">
+                    <div class="col-xxl-12 d-flex align-self-start mb-2">
+                        {{ form_label(form.day, "Andro", ) }}
+                    </div>
+                    <div class="col-xxl-12">
+                        {{ form_widget(form.day, {'attr': {'class': 'form-select', 'style': 'cursor: pointer'}}) }}
+                    </div>
+                </div>
+                <div class="row form-group mb-3">
+                    <div class="col-xxl-12 d-flex align-self-start mb-2">
+                        {{ form_label(form.recipe, "Recette (Tsy voatery asiana)", ) }}
+                    </div>
+                    <div class="col-xxl-12">
+                        {{ form_widget(form.recipe, {'attr': {'class': 'editor form-control', 'style':'height: 200px', 'placeholder': 'Ny fomba fikarakarana'}}) }}
+                    </div>
+                </div>
+
+                <button class="btn btn-primary form-control" type="submit">Vita</button>
+
+            {{ form_end(form) }}
+        </div>
+    </div>
+
+{% endblock %}
+
