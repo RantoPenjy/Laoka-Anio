@@ -29,19 +29,25 @@
                 </div>
             </a>
             <h2 class="mb-3" id="randomResult"></h2>
-            {% if(connected == true) %}
-            <a href="{{ path('add_plat') }}" class="text-decoration-none mt-3">Hanampy laoka vaovao</a><br>
-            <a href="{{ path('plat_list') }}" class="text-decoration-none mt-3">Hijery ny laoka rehetra misy</a>
+            {% if(app.user) %}
+                <a href="{{ path('add_plat') }}" class="text-decoration-none mt-3">Hanampy laoka vaovao</a><br>
+                <a href="{{ path('plat_list') }}" class="text-decoration-none mt-3">Hijery ny laoka rehetra misy</a>
             {% endif %}
         </div>
     </div>
 
     <div class="fixed-top text-center d-flex justify-content-between bg-dark px-3 languages">
         <div class="">
-            {% if(connected == false) %}
-            <a href="{{ path('login') }}" class="text-decoration-none">Connexion</a>
+            {% if(app.user) %}
+                <a href="{{ path('app_logout') }}" class="text-decoration-none">Déconnexion</a>
             {% else %}
-            <a href="{{ path('logout') }}" class="text-decoration-none">Déconnexion</a>
+                <a href="{{ path('app_login') }}" class="text-decoration-none me-3">Connexion</a>
+                <a href="{{ path('app_register') }}" class="text-decoration-none">Inscription</a>
+            {% endif %}
+        </div>
+        <div class="">
+            {% if(app.user) %}
+                <span class="text-white">{{ app.user.name }} {{ app.user.firstname }}</span>
             {% endif %}
         </div>
         <div class="">

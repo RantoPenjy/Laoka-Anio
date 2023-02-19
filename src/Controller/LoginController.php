@@ -2,83 +2,31 @@
 
 namespace App\Controller;
 
-use App\Entity\User;
-use App\Form\LoginType;
-use Doctrine\ORM\EntityManagerInterface;
-use LogicException;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\Security\Core\Exception\BadCredentialsException;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginController extends AbstractController
 {
-    #[Route('/login', name: 'login')]
-    public function index(Request $request, EntityManagerInterface $manager, AuthenticationUtils $authenticationUtils, UserPasswordHasherInterface $passwordHasher): Response
+    #[Route(path: '/login', name: 'app_login')]
+    public function login(AuthenticationUtils $authenticationUtils): Response
     {
-        $users = new User();
-        // Création du formulaire de connexion
-        $form = $this->createForm(LoginType::class, $users);
+        // if ($this->getUser()) {
+        //     return $this->redirectToRoute('target_path');
+        // }
 
-        // Récupération des erreurs d'authentification précédentes
+        // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
-        // Récupération du dernier nom d'utilisateur (email) entré par l'utilisateur
-        $lastEmail = $authenticationUtils->getLastUsername();
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
 
-        if ($request->isMethod('POST'))
-        {
-            $form->handleRequest($request);
-            if ($form->isSubmitted() && $form->isValid())
-            {
-                $data = $form->getData();
-
-                // Recherche de l'utilisateur correspondant à l'adresse email entrée
-                $user = $manager
-                    ->getRepository(User::class)
-                    ->findOneBy(['email' => $data->getEmail()]);
-
-                if (!$user || !$passwordHasher->isPasswordValid($user, $data->getPassword()))
-                {
-                    throw new BadCredentialsException('Invalid password.');
-
-//                    return $this->redirectToRoute('login');
-                }
-
-                // Ouverture de la session utilisateur
-                $session = $request->getSession();
-                $session->start();
-                $session->set('user_id', $user->getId());
-                $session->set('name', $user->getName());
-                $session->set('firstname', $user->getId());
-
-                $this->addFlash('success', 'Vous êtes maintenant connecté.');
-
-                // Redirection vers la page d'accueil
-                return $this->redirectToRoute('homepage');
-            }
-        }
-        return $this->render('login/index.html.twig', [
-            'form' => $form->createView(),
-            'last_email' => $lastEmail,
-            'error' => $error
-        ]);
+        return $this->render('security/login.html.twig', ['last_username' => $lastUsername, 'error' => $error]);
     }
 
-    /**
-     * @Route("/logout", name="logout")
-     */
-    public function logout(Request $request): Response
+    #[Route(path: '/logout', name: 'app_logout')]
+    public function logout(): void
     {
-        // Fermeture de la session utilisateur
-        $session = $request->getSession();
-        $session->clear();
-
-        $this->addFlash('success', 'Vous êtes maintenant déconnecté.');
-
-        // Redirection vers la page de connexion
-        return $this->redirectToRoute('homepage');
+        throw new \LogicException('This method can be blank - it will be intercepted by the logout key on your firewall.');
     }
 }

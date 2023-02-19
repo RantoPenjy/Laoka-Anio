@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Connexion{% endblock %}
+
+{% block body %}
+    {% if app.user %}
+        <div class="container text-center d-flex justify-content-center align-items-center h-100 h3">
+            <div class="d-block">
+                Vous êtes déjà connecté en tant que
+                <div>{{ app.user.firstname }} {{ app.user.name }} ({{ app.user.userIdentifier }})</div>
+                <a href="{{ path('app_logout') }}" class="text-decoration-none">Déconnexion</a>
+            </div>
+        </div>
+    {% else %}
+        <div class="container d-flex justify-content-center align-items-center h-100">
+            <div class="text-center">
+                <a class="text-decoration-none d-flex align-self-start align-items-center mb-2" href="{{ path('homepage') }}">
+                    <i class="fas fa-chevron-left fa-sm me-2"></i>Hiverina
+                </a>
+                <h1 class="mb-4">Connexion</h1>
+                <form method="post">
+                    {% if error %}
+                        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                    {% endif %}
+
+                    <div class="row form-group mb-3">
+                        <div class="col-xxl-12 d-flex align-self-start mb-2">
+                            <label for="inputEmail">Email</label>
+                        </div>
+                        <div class="col-xxl-12">
+                            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" placeholder="Ampidiro ny mailaka" required autofocus>
+                        </div>
+                    </div>
+                    <div class="row form-group mb-3">
+                        <div class="col-xxl-12 d-flex align-self-start mb-2">
+                            <label for="inputPassword">Password</label>
+                        </div>
+                        <div class="col-xxl-12">
+                            <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="Ampidiro ny tenimiafina" required>
+                        </div>
+                    </div>
+                    <input type="hidden" name="_csrf_token"
+                           value="{{ csrf_token('authenticate') }}"
+                    >
+
+                    {#
+                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+                    See https://symfony.com/doc/current/security/remember_me.html
+
+                    <div class="checkbox mb-3">
+                        <label>
+                            <input type="checkbox" name="_remember_me"> Remember me
+                        </label>
+                    </div>
+                    #}
+
+                    <button class="btn btn-primary form-control" type="submit">
+                        Connexion
+                    </button>
+                </form>
+            </div>
+        </div>
+    {% endif %}
+
+
+
+{% endblock %}

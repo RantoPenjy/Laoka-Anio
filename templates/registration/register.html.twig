@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Inscription{% endblock %}
+
+{% block body %}
+<div class="container d-flex justify-content-center align-items-center h-100">
+    <div class="text-center w-50 align-items-center">
+        <div class="align-self-start d-flex">
+            <a class="text-decoration-none" href="{{ path('homepage') }}">
+                <i class="fas fa-chevron-left fa-sm me-2"></i>Hiverina
+            </a>
+        </div>
+        <div class="h1 mb-3">Inscription</div>
+        <div class="">
+            {{ form_start(registrationForm) }}
+            <div class="row align-items-center mb-3">
+                <div class="col-3 text-start">
+                    {{ form_label(registrationForm.name, "Anarana")}}
+                </div>
+                <div class="col-9">
+                    {{ form_widget(registrationForm.name, {'attr': {'class': 'form-control', 'placeholder': "Ampidiro ny anarana"}}) }}
+                </div>
+            </div>
+            <div class="row align-items-center mb-3">
+                <div class="col-3 text-start">
+                    {{ form_label(registrationForm.firstname, "Fanampiny") }}
+                </div>
+                <div class="col-9">
+                    {{ form_widget(registrationForm.firstname, {'attr': {'class': 'form-control', 'placeholder': "Ampidiro ny fanampin'anarana"}}) }}
+                </div>
+            </div>
+            <div class="row align-items-center mb-3">
+                <div class="col-3 text-start">
+                    {{ form_label(registrationForm.address, "Adiresy") }}
+                </div>
+                <div class="col-9">
+                    {{ form_widget(registrationForm.address, {'attr': {'class': 'form-control', 'placeholder': "Ampidiro ny adiresy"}}) }}
+                </div>
+            </div>
+            <div class="row align-items-center mb-3">
+                <div class="col-3 text-start">
+                    {{ form_label(registrationForm.email, "Mailaka") }}
+                </div>
+                <div class="col-9">
+                    {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'placeholder': "Ampidiro ny mailaka"}}) }}
+                </div>
+            </div>
+            <div class="row align-items-center mb-3">
+                <div class="col-3 text-start">
+                    {{ form_label(registrationForm.plainPassword, "Mot de passe") }}
+                </div>
+                <div class="col-9">
+                    {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': "Ampidiro ny tenimiafina"}}) }}
+                </div>
+            </div>
+            {#  {{ form_row(registrationForm.plainPassword, {
+                label: 'Password'
+            }) }} #}
+            <div class="row align-items-center mb-3">
+                <div class="col-auto">
+                    {{ form_label(registrationForm.agreeTerms, "Manaiky ny conditions rehetra") }}
+                </div>
+                <div class="col-auto">
+                    {{ form_widget(registrationForm.agreeTerms, {'attr': {'class': 'form-check-input', 'placeholder': "Ampidiro ny tenimiafina"}}) }}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary form-control">Register</button>
+            {{ form_end(registrationForm) }}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
