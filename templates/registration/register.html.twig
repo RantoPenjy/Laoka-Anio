@@ -4,9 +4,9 @@
 
 {% block body %}
 <div class="container d-flex justify-content-center align-items-center h-100">
-    <div class="text-center w-50 align-items-center">
+    <div class="text-center">
         <div class="align-self-start d-flex">
-            <a class="text-decoration-none" href="{{ path('homepage') }}">
+            <a class="text-decoration-none btn text-primary" onclick="history.go(-1)" cursor="pointer">
                 <i class="fas fa-chevron-left fa-sm me-2"></i>Hiverina
             </a>
         </div>
@@ -51,6 +51,14 @@
                 </div>
                 <div class="col-9">
                     {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'placeholder': "Ampidiro ny tenimiafina"}}) }}
+                </div>
+            </div>
+            <div class="row align-items-center mb-3">
+                <div class="col-3 text-start">
+                    {{ form_label(registrationForm.avatar, 'Safidio ny sary') }}
+                </div>
+                <div class="col-9">
+                    {{ form_widget(registrationForm.avatar, {'attr': {'type': 'image', 'class': 'form-control', 'placeholder': "Ampidiro ny tenimiafina"}}) }}
                 </div>
             </div>
             {#  {{ form_row(registrationForm.plainPassword, {

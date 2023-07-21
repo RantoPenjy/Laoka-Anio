@@ -53,7 +53,7 @@ class DateConstant
             'traduction'=>'Aprily'
         ),
         array(
-            'name'=>'Mey',
+            'name'=>'May',
             'traduction'=>'May'
         ),
         array(

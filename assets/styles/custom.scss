@@ -5,3 +5,19 @@
 .languages a:hover{
   color: #dedede;
 }
+
+#navbar ul li{
+  margin: 0 5px;
+}
+
+.navbar-toggler{
+  border: none;
+}
+
+.navbar-toggler:focus{
+  border: none;
+}
+
+#menu{
+  display: none
+}

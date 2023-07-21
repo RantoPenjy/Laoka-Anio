@@ -22,6 +22,7 @@ class PlatType extends AbstractType
                 )
             ))
             ->add('recipe')
+            // ->add('recipe', CKEditorType::class)
         ;
     }
 

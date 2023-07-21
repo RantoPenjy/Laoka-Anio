@@ -4,11 +4,15 @@
 
 {% block body %}
 
-    <div class="container d-flex justify-content-center align-items-center h-100">
+    {% include 'header.html.twig' %}
+
+    <div class="container d-flex justify-content-center mt-4">
         <div class="text-center">
-            <a class="text-decoration-none d-flex align-self-start align-items-center mb-2" href="{{ path('homepage') }}">
-                <i class="fas fa-chevron-left fa-sm me-2"></i>Hiverina
-            </a>
+            <div class="align-self-start d-flex">
+                <a class="text-decoration-none btn text-primary" onclick="history.go(-1)" cursor="pointer">
+                    <i class="fas fa-chevron-left fa-sm me-2"></i>Hiverina
+                </a>
+            </div>
             <h1 class="mb-4">Hanampy laoka vaovao</h1>
 
             {{ form_start(form) }}
@@ -34,7 +38,7 @@
                         {{ form_label(form.recipe, "Recette (Tsy voatery asiana)", ) }}
                     </div>
                     <div class="col-xxl-12">
-                        {{ form_widget(form.recipe, {'attr': {'class': 'editor form-control', 'style':'height: 200px', 'placeholder': 'Ny fomba fikarakarana'}}) }}
+                        {{ form_widget(form.recipe, {'attr': {'class': 'editor form-control', 'style':'height: 150px', 'placeholder': 'Ny fomba fikarakarana'}}) }}
                     </div>
                 </div>
 
@@ -44,5 +48,8 @@
         </div>
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
 {% endblock %}
 

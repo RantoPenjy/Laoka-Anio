@@ -4,7 +4,8 @@
 
 {% block body %}
     {% if app.user %}
-        <div class="container text-center d-flex justify-content-center align-items-center h-100 h3">
+        {% include 'header.html.twig' %}
+        <div class="container text-center d-flex justify-content-center align-items-center h-75 h3">
             <div class="d-block">
                 Vous êtes déjà connecté en tant que
                 <div>{{ app.user.firstname }} {{ app.user.name }} ({{ app.user.userIdentifier }})</div>
@@ -14,11 +15,13 @@
     {% else %}
         <div class="container d-flex justify-content-center align-items-center h-100">
             <div class="text-center">
-                <a class="text-decoration-none d-flex align-self-start align-items-center mb-2" href="{{ path('homepage') }}">
-                    <i class="fas fa-chevron-left fa-sm me-2"></i>Hiverina
-                </a>
+                <div class="align-self-start d-flex">
+                    <a class="text-decoration-none btn text-primary" onclick="history.go(-1)" cursor="pointer">
+                        <i class="fas fa-chevron-left fa-sm me-2"></i>Hiverina
+                    </a>
+                </div>
                 <h1 class="mb-4">Connexion</h1>
-                <form method="post">
+                <form method="post" id="loginForm">
                     {% if error %}
                         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
                     {% endif %}
@@ -33,7 +36,7 @@
                     </div>
                     <div class="row form-group mb-3">
                         <div class="col-xxl-12 d-flex align-self-start mb-2">
-                            <label for="inputPassword">Password</label>
+                            <label for="inputPassword">Mot de passe</label>
                         </div>
                         <div class="col-xxl-12">
                             <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" placeholder="Ampidiro ny tenimiafina" required>
@@ -43,20 +46,22 @@
                            value="{{ csrf_token('authenticate') }}"
                     >
 
-                    {#
-                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                    See https://symfony.com/doc/current/security/remember_me.html
+{#                    Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.#}
+{#                    See https://symfony.com/doc/current/security/remember_me.html#}
 
-                    <div class="checkbox mb-3">
+                    <div class="text-start checkbox mb-3">
                         <label>
-                            <input type="checkbox" name="_remember_me"> Remember me
+                            <input type="checkbox" name="_remember_me"> Se rappeller de moi
                         </label>
                     </div>
-                    #}
 
-                    <button class="btn btn-primary form-control" type="submit">
-                        Connexion
+                    <button class="btn btn-primary rounded-5 form-control" type="submit" id="submitBtn">
+                        <span id="submitBtnText">Connexion</span>
+                        <div id="submitBtnSpinner" class="spinner-border spinner-border-sm text-light" hidden>
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
                     </button>
+
                 </form>
             </div>
         </div>

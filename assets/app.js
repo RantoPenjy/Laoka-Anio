@@ -24,3 +24,10 @@ import 'datatables.net-bs5/js/dataTables.bootstrap5';
 import 'datatables.net-bs5/css/dataTables.bootstrap5.css';
 const dt = require('datatables.net');
 
+// Fontawesome plugin
+require('@fortawesome/fontawesome-free/css/all.min.css');
+require('@fortawesome/fontawesome-free/js/all.js');
+
+// Animejs library
+import 'animejs/lib/anime.es.js';
+const anime = require('animejs');

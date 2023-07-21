@@ -6,3 +6,5 @@ when@test:
         strict_variables: true
         form_themes:
             - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+        globals:
+            avatars_directory: '%kernel.project_dir%/public/uploads/avatars'

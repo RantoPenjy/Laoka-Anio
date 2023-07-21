@@ -1,0 +1,81 @@
+{% block body %}
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-default shadow">
+        <div class="container d-flex justify-content-between align-items-center" style="padding: 10px">
+            <div class="">
+                <a class="navbar-brand h1" href="{{ path('homepage') }}"><b>LAOKA ANIO</b></a>
+            </div>
+
+            <a class="navbar-toggler text-black" href="#" id="menu-bars" style="font-size: 20px" type="button" data-bs-toggle="collapse" data-bs-target="#" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </a>
+
+            <div class="collapse navbar-collapse justify-content-lg-end" id="navbar">
+                <ul class="nav navbar-nav" style="">
+                    <li class="nav-item text-center"><a class="nav-link active" href="">Acceuil</a></li>
+                    <li class="nav-item text-center"><a class="nav-link" href="">Actualités</a></li>
+
+                    <div class="navbar-divider ms-4 me-2"></div>
+                    {% if(app.user) %}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                {% if(app.user.avatar == null) %}
+                                    <img class="img-profile rounded-circle ms-3" src="{{ asset('images/default-profile.png') }}" style="object-fit: cover; height: 2rem; width: 2rem" alt="My Avatar">
+                                {% else %}
+                                    <img class="img-profile rounded-circle ms-3" src="{{ asset('uploads/avatars/' ~ app.user.avatar) }}" style="object-fit: cover; height: 2rem; width: 2rem" alt="My Avatar">
+                                {% endif %}
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="userDropdown">
+                                <div id="adminName" class="dropdown-item d-flex justify-content-center">
+                                    <div class="d-block">
+                                        Connecté en tant que
+                                        <div class="fw-bold">{{ app.user.firstname }} {{ app.user.name }}</div>
+                                    </div>
+                                </div>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="#">Paramètre du compte</a></li>
+                                <div class="dropdown-divider"></div>
+                                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Déconnexion</a></li>
+                            </ul>
+                        </li>
+                    {% else %}
+                        <li class="nav-item text-center">
+                            <a class="nav-link" href="{{ path('app_login') }}">Connexion</a>
+                        </li>
+                        <li class="nav-item text-center">
+                            <a class="btn btn-outline-primary rounded-5 w-100" href="{{ path('app_register') }}">Inscription</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Déconnexion</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">Voullez-vous vraiment vous déconnecter?</div>
+                <div class="modal-footer">
+                    <a class="btn btn-danger" href="{{ path('app_logout') }}">Déconnecter</a>
+                    <button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Annuler</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar menu on responsive -->
+    <div class="card h-100 position-absolute justify-content-center text-center" id="menu" style="z-index: 2000; width: 90%">
+        <button type="button" class="btn-close align-self-end m-3" aria-label="Close"></button>
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+
+{% endblock %}
