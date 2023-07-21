@@ -8,7 +8,7 @@ It had a simple display made with Bootstrap and use the DataTable to show all di
 - Clone the repository from Github: `git clone https://github.com/RantoPenjy/Laoka-Anio`
 - Install dependencies: `composer install`
 - Create a database: `php bin/console doctrine:database:create`
-- Update database schema: `php bin/console doctrine:schema:update`
+- Update database schema: `php bin/console doctrine:schema:update --force`
 - Run database migrations: `php bin/console doctrine:migrations:migrate`
 - Load fixtures: `php bin/console doctrine:fixtures:load`
 - Start the development server: `symfony server:start` or `symfony serve`
