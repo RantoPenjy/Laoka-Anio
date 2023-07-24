@@ -28,7 +28,7 @@ jQuery(function(){
         })
     })
 
-    $('#loginForm').addEventListener('submit', function(event) {
+    $('#loginForm').on('submit', function(event) {
         event.preventDefault();
         $("#submitBtnSpinner").removeAttr('hidden').show();
         $("#submitBtnText").hide();
