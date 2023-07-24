@@ -4,11 +4,14 @@
 
 {% block body %}
 
+    <section id="background">
+
     {% include 'header.html.twig' %}
 
     <div class="container d-flex justify-content-center align-items-center h-75">
         <div class="text-center">
-            <h1 class="fw-bold">Laoka anio</h1>
+            <h6>Tongasoa eto amin'ny</h6>
+            <h1 id="welcome_name" class="fw-bold">LAOKA ANIO</h1>
             <h4>
 {#                {% for mlg in malagasy_day %}#}
 {#                    {% if day == mlg.name %}#}
@@ -38,6 +41,8 @@
             {% endif %}
         </div>
     </div>
+
+    </section>
 
 {% endblock %}
 

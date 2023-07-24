@@ -1,3 +1,10 @@
+#background{
+  height: 100vh;
+  background-image: url('/public/images/LAOKA\ ANIO\ BCG.jpg');
+  color: #fff;
+  object-fit: contain;
+}
+
 .languages a{
   color: #fefefe;
 }
@@ -20,4 +27,8 @@
 
 #menu{
   display: none
+}
+
+#welcome_name{
+  font-size: 72px;
 }
