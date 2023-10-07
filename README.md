@@ -13,6 +13,10 @@ It had a simple display made with Bootstrap and use the DataTable to show all di
   ```
   composer install
   ```
+  and
+  ```
+  npm install
+  ```
 - Create a database:
   ```
   php bin/console doctrine:database:create
