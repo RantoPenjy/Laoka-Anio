@@ -1,5 +1,5 @@
 # Laoka-Anio
-
+ 
 Laoka Anio is a Symfony 6 project that selects a random Malagasy dish from a database of Malagasy dishes. The website also serves as a cuisine blog that showcases all the Malagasy dishes in the database along with their recipes.
 It had a simple display made with Bootstrap and use the DataTable to show all dishes and their properties.
 
