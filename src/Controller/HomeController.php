@@ -3,15 +3,17 @@
 namespace App\Controller;
 
 use App\Constant\DateConstant;
+use App\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Security\Core\Security;
 
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'homepage')]
-    public function index(Request $request): Response
+    public function index(Request $request, Security $security): Response
     {
         setlocale(LC_TIME, NULL);
         $dateNow = new \DateTime('now');

@@ -1,4 +1,8 @@
 import { Dropdown } from "bootstrap";
+import anime from 'animejs';
+import 'jquery';
+const $ = require('jquery');
+global.$ = global.jQuery = $;
 
 jQuery(function(){
     $("#randomBtnSpinner").hide();
@@ -14,26 +18,27 @@ jQuery(function(){
                 $("#randomBtnText").show().text('Hisafidy hafa');
                 $("#randomBtnSpinner").hide();
                 let result = "👉 " + response.name + " 👈";
+                $("#randomResult").addClass('animate__animated animate__zoomIn');
+                // $("#randomResult").style.opacity(1);
                 $("#randomResult").text(result);
-                // anime({
-                //     targets: $("#randomResult"),
-                //     update: function (){
-                //         $("#randomResult").text(result);
-                //     }
-                // })
+                anime({
+                    targets: ["#randomResult", "#showRecipeLink"],
+                    opacity: [0, 1],
+                    duration: 1000,
+                    easing: 'easeInOutQuad',
+                })
             },
             error: function(xhr, textStatus, errorThrown) {
-                console.log('Ajax request failed. ');
+                console.log('Ajax request failed.');
             }
         })
     })
 
+    $('#laokaAnioWelcomeLogo').addClass('active');
+
     $('#loginForm').on('submit', function(event) {
-        event.preventDefault();
         $("#submitBtnSpinner").removeAttr('hidden').show();
         $("#submitBtnText").hide();
-
-        $('#loginForm').trigger('submit');
     })
 
     var dropdowns = document.querySelectorAll('.dropdown-toggle');
@@ -46,12 +51,15 @@ jQuery(function(){
         event.preventDefault();
         console.log('Cliqué')
         anime({
-            targets: $('#menu'),
-            display: 'inline-block',
-            easing: 'easeInOutQuad'
+            targets: '#menu',
+            opacity: [0, 1],
+            duration: 1000, // Durée de l'animation en millisecondes
+            easing: 'easeInOutQuad',
+            // begin: function() {
+            //     $('#menu').style.display = 'block';
+            // },
         })
     })
-
 
     // DataTable Plat List
     $('#datatable-plat-list').dataTable({

@@ -1,162 +1,126 @@
-{% extends 'base.html.twig' %}
-
-{% block title %}Tongasoa eto @ Laoka anio{% endblock %}
-
-{% block body %}
-
-    <section id="background">
-
-    {% include 'header.html.twig' %}
-
-    <div class="container d-flex justify-content-center align-items-center h-75">
-        <div class="text-center">
-            <h6>Tongasoa eto amin'ny</h6>
-            {# <h1 id="welcome_name" class="fw-bold animate__animated animate__zoomIn">LAOKA ANIO</h1> #}
-            <!--?xml version="1.0" encoding="utf-8"?-->
-            <!-- Generator: Adobe Illustrator 17.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-
-            <svg class="mt-3 mb-3" version="1.1" id="laokaAnioWelcomeLogo" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:svg="http://www.w3.org/2000/svg" inkscape:version="1.2.2 (b0a8486, 2022-12-01)" sodipodi:docname="LAOKA_ANIO_LOGO_BW.svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" height="100%" viewBox="21.977 99.83 525.983 67.27" enable-background="new 21.977 99.83 525.983 67.27" xml:space="preserve">
-                <sodipodi:namedview inkscape:cy="141.72" inkscape:cx="283.44" inkscape:zoom="1.8875247" showgrid="false" borderopacity="1" bordercolor="#eeeeee" pagecolor="#505050" id="namedview193" inkscape:window-height="738" inkscape:window-width="1366" inkscape:pagecheckerboard="0" inkscape:pageopacity="0" inkscape:showpageshadow="0" inkscape:window-maximized="1" inkscape:window-y="0" inkscape:current-layer="g154" inkscape:window-x="0" inkscape:deskcolor="#505050">
+<svg xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" class="mt-3 mb-3"
+     version="1.1"
+     id="laokaAnioWelcomeLogo"
+     inkscape:version="1.2.2 (b0a8486, 2022-12-01)" sodipodi:docname="LAOKA_ANIO_LOGO_BW.svg"
+     xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100%"
+     height="100%" viewBox="21.977 99.83 525.983 67.27" enable-background="new 21.977 99.83 525.983 67.27"
+     xml:space="preserve">
+     <sodipodi:namedview inkscape:cy="141.72" inkscape:cx="283.44" inkscape:zoom="1.8875247" showgrid="false"
+                                    borderopacity="1" bordercolor="#eeeeee" pagecolor="#505050" id="namedview193"
+                                    inkscape:window-height="738" inkscape:window-width="1366"
+                                    inkscape:pagecheckerboard="0" inkscape:pageopacity="0" inkscape:showpageshadow="0"
+                                    inkscape:window-maximized="1" inkscape:window-y="0" inkscape:current-layer="g154"
+                                    inkscape:window-x="0" inkscape:deskcolor="#505050">
                     </sodipodi:namedview>
-                <g id="g154">
+    <g id="g154">
                     <g id="g128">
                         <path id="path126" fill="#F9F9F9" stroke="#FFFFFF" stroke-width="0.9" stroke-miterlimit="10" d="M22.428,102.766H34.21v52.617
                             c0,0.553,0.448,1,1,1h25.896v9.339l-38.679,0.041v-62.997H22.428z" class="svg-elem-1"></path>
                     </g>
-                    <g id="g132">
+        <g id="g132">
                         <path id="path130" fill="#F9F9F9" stroke="#FFFFFF" stroke-width="0.9" stroke-miterlimit="10" d="M113.398,165.764l-4.497-14.763
                             c-0.128-0.421-0.517-0.709-0.957-0.709H84.248c-0.44,0-0.829,0.288-0.957,0.709l-4.497,14.763H66.098l22.238-63.265h15.434
                             l22.324,63.265H113.398z M96.118,110.591c-0.456,0-0.854,0.308-0.968,0.75c-0.969,3.759-3.792,13.212-8.391,28.096
                             c-0.094,0.304-0.038,0.633,0.151,0.889c0.188,0.255,0.487,0.406,0.805,0.406h16.939c0.318,0,0.617-0.151,0.805-0.407
                             s0.244-0.586,0.15-0.89c-4.41-14.189-6.816-21.966-7.354-23.774c-0.538-1.801-0.928-3.244-1.16-4.288
-                            c-0.1-0.451-0.497-0.775-0.959-0.783C96.129,110.591,96.124,110.591,96.118,110.591z" class="svg-elem-2"></path>
+                            c-0.1-0.451-0.497-0.775-0.959-0.783C96.129,110.591,96.124,110.591,96.118,110.591z"
+                              class="svg-elem-2"></path>
                     </g>
-                    <g id="g136">
+        <g id="g136">
                         <path id="path134" fill="#F9F9F9" stroke="#FFFFFF" stroke-width="0.9" stroke-miterlimit="10" d="M234.595,165.764L217.86,138.85
                             c-0.146-0.235-0.383-0.399-0.654-0.453c-0.064-0.013-0.13-0.019-0.195-0.019c-0.208,0-0.412,0.064-0.583,0.188l-5.824,4.179
                             c-0.262,0.188-0.417,0.49-0.417,0.813v22.207h-11.782v-62.998h11.782v28.743c0,0.436,0.282,0.821,0.696,0.953
                             c0.1,0.032,0.203,0.047,0.304,0.047c0.318,0,0.625-0.152,0.815-0.421l5.424-7.647l17.272-21.675h12.75l-21.397,27.146
-                            c-0.262,0.333-0.287,0.794-0.061,1.152l15.723,24.93l5.514,9.77L234.595,165.764L234.595,165.764z" class="svg-elem-3"></path>
+                            c-0.262,0.333-0.287,0.794-0.061,1.152l15.723,24.93l5.514,9.77L234.595,165.764L234.595,165.764z"
+                              class="svg-elem-3"></path>
                     </g>
-                    <g id="g140">
+        <g id="g140">
                         <path id="path138" fill="#F9F9F9" stroke="#FFFFFF" stroke-width="0.9" stroke-miterlimit="10" d="M301.561,165.764l-4.497-14.763
                             c-0.129-0.421-0.517-0.709-0.957-0.709h-23.696c-0.44,0-0.828,0.288-0.957,0.709l-4.498,14.763H254.26l22.238-63.265h15.434
                             l22.325,63.265H301.561z M284.282,110.591c-0.456,0-0.854,0.308-0.968,0.75c-0.971,3.765-3.793,13.218-8.39,28.096
                             c-0.094,0.304-0.038,0.633,0.151,0.889c0.188,0.255,0.487,0.406,0.805,0.406h16.939c0.317,0,0.617-0.151,0.806-0.407
                             c0.188-0.256,0.243-0.586,0.149-0.89c-4.406-14.177-6.812-21.954-7.355-23.774c-0.538-1.807-0.929-3.25-1.159-4.288
-                            c-0.101-0.451-0.497-0.775-0.96-0.783C284.293,110.591,284.288,110.591,284.282,110.591z" class="svg-elem-4"></path>
+                            c-0.101-0.451-0.497-0.775-0.96-0.783C284.293,110.591,284.288,110.591,284.282,110.591z"
+                              class="svg-elem-4"></path>
                     </g>
-                    <g id="g144">
+        <g id="g144">
                         <path id="path142" fill="#F9F9F9" stroke="#FFFFFF" stroke-width="0.9" stroke-miterlimit="10" d="M381.839,165.764l-4.497-14.763
                             c-0.129-0.421-0.517-0.709-0.957-0.709h-23.696c-0.44,0-0.828,0.288-0.957,0.709l-4.497,14.763h-12.697l22.238-63.265h15.432
                             l22.074,63.265H381.839z M364.559,110.591c-0.455,0-0.854,0.308-0.969,0.75c-0.972,3.768-3.794,13.221-8.39,28.096
                             c-0.094,0.304-0.038,0.633,0.15,0.889c0.188,0.255,0.487,0.406,0.805,0.406h16.939c0.317,0,0.617-0.151,0.806-0.407
                             c0.188-0.256,0.243-0.586,0.149-0.89c-4.406-14.176-6.813-21.952-7.355-23.774c-0.538-1.807-0.929-3.25-1.159-4.289
-                            c-0.101-0.451-0.497-0.775-0.96-0.783C364.57,110.591,364.565,110.591,364.559,110.591z" class="svg-elem-5"></path>
+                            c-0.101-0.451-0.497-0.775-0.96-0.783C364.57,110.591,364.565,110.591,364.559,110.591z"
+                              class="svg-elem-5"></path>
                     </g>
-                    <g id="g148">
+        <g id="g148">
                         <path id="path146" fill="#F9F9F9" stroke="#FFFFFF" stroke-width="0.9" stroke-miterlimit="10" d="M439.476,165.764
                             l-27.987-48.669c-0.179-0.31-0.51-0.501-0.867-0.501h-0.399c-0.276,0-0.541,0.114-0.729,0.316
                             c-0.189,0.202-0.286,0.473-0.269,0.749c0.56,8.633,0.843,14.864,0.843,18.52v29.587h-10.314v-62.998h15.807l27.941,48.184
                             c0.179,0.309,0.509,0.498,0.865,0.498h0.312c0.274,0,0.537-0.112,0.726-0.312s0.287-0.467,0.273-0.741
-                            c-0.442-8.377-0.666-14.388-0.666-17.864v-29.765h10.404l-0.001,62.998h-15.939L439.476,165.764L439.476,165.764z" class="svg-elem-6"></path>
+                            c-0.442-8.377-0.666-14.388-0.666-17.864v-29.765h10.404l-0.001,62.998h-15.939L439.476,165.764L439.476,165.764z"
+                              class="svg-elem-6"></path>
                     </g>
-                    <g id="g152">
-                        
-                            <rect id="rect150" x="463.343" y="102.766" fill="#F9F9F9" stroke="#FFFFFF" stroke-width="0.9" stroke-miterlimit="10" width="11.781" height="62.998" class="svg-elem-7"></rect>
+        <g id="g152">
+
+                            <rect id="rect150" x="463.343" y="102.766" fill="#F9F9F9" stroke="#FFFFFF"
+                                  stroke-width="0.9" stroke-miterlimit="10" width="11.781" height="62.998"
+                                  class="svg-elem-7"></rect>
                     </g>
                 </g>
-                <g id="g166">
+    <g id="g166">
                     <path id="path156" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M486.202,148.675
                         c7.953,15.979,27.354,22.485,43.333,14.532s22.485-27.354,14.532-43.333c-0.001-0.003-0.003-0.005-0.004-0.008
-                        c-7.953-15.979-27.354-22.485-43.333-14.532s-22.485,27.354-14.532,43.333C486.199,148.669,486.201,148.672,486.202,148.675z" class="svg-elem-8"></path>
-                    <path id="path158" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M529.937,123.172l4.864-2.422
-                        c1.74-0.867,3.86-0.156,4.726,1.584c0.867,1.74,0.156,3.86-1.584,4.726l-4.864,2.422" class="svg-elem-9"></path>
-                    <path id="path160" fill="#FFFFFF" d="M501.382,141.116c3.778,7.595,12.997,10.69,20.593,6.911
+                        c-7.953-15.979-27.354-22.485-43.333-14.532s-22.485,27.354-14.532,43.333C486.199,148.669,486.201,148.672,486.202,148.675z"
+                          class="svg-elem-8"></path>
+        <path id="path158" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M529.937,123.172l4.864-2.422
+                        c1.74-0.867,3.86-0.156,4.726,1.584c0.867,1.74,0.156,3.86-1.584,4.726l-4.864,2.422"
+              class="svg-elem-9"></path>
+        <path id="path160" fill="#FFFFFF" d="M501.382,141.116c3.778,7.595,12.997,10.69,20.593,6.911
                         c7.595-3.778,10.69-12.997,6.911-20.593c-0.002-0.004-0.004-0.007-0.006-0.011c-3.78-7.594-13.001-10.686-20.596-6.906
-                        c-7.594,3.78-10.686,13.001-6.906,20.596C501.381,141.114,501.382,141.115,501.382,141.116L501.382,141.116z" class="svg-elem-10"></path>
-                    <path id="path162" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M522.984,150.851l-0.012,0.006
+                        c-7.594,3.78-10.686,13.001-6.906,20.596C501.381,141.114,501.382,141.115,501.382,141.116L501.382,141.116z"
+              class="svg-elem-10"></path>
+        <path id="path162" fill="none" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M522.984,150.851l-0.012,0.006
                         c-9.139,4.55-20.285,0.82-24.841-8.317c-4.56-9.144-0.832-20.292,8.311-24.853c9.152-4.557,20.297-0.825,24.854,8.311
                         C535.855,135.142,532.127,146.291,522.984,150.851L522.984,150.851z" class="svg-elem-11"></path>
-                    <path id="path164" fill="#7A4E00" stroke="#000000" stroke-miterlimit="10" d="M502.96,140.121
+        <path id="path164" fill="#7A4E00" stroke="#000000" stroke-miterlimit="10" d="M502.96,140.121
                         c3.228,6.492,11.109,9.137,17.601,5.909s9.137-11.109,5.909-17.601c-0.002-0.003-0.003-0.007-0.006-0.011
                         c-3.23-6.491-11.112-9.133-17.602-5.902c-6.491,3.23-9.133,11.112-5.902,17.602C502.959,140.119,502.96,140.12,502.96,140.121
                         L502.96,140.121z" class="svg-elem-12"></path>
                 </g>
-                <g id="g190">
+    <g id="g190">
                     <g id="g170">
                         <path id="path168" fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M157.768,166.201
                             c-18.161,0-32.935-14.774-32.935-32.936c0-18.161,14.774-32.935,32.935-32.935s32.935,14.774,32.935,32.935
                             C190.703,151.427,175.929,166.201,157.768,166.201z" class="svg-elem-13"></path>
                     </g>
-                    <path id="path172" fill="#BDBDBD" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M157.768,152.451
+        <path id="path172" fill="#BDBDBD" stroke="#000000" stroke-width="2" stroke-miterlimit="10" d="M157.768,152.451
                         c-10.597,0-19.184-8.59-19.184-19.184c0-10.597,8.59-19.184,19.184-19.184c10.596,0,19.184,8.588,19.184,19.184
                         C176.954,143.861,168.364,152.451,157.768,152.451z" class="svg-elem-14"></path>
-                    <path id="path174" display="none" fill="#98A9B4" stroke="#98A9B4" stroke-miterlimit="10" d="M148.407,112.092
+        <path id="path174" display="none" fill="#98A9B4" stroke="#98A9B4" stroke-miterlimit="10" d="M148.407,112.092
                         c-0.602,0-1.092,0.488-1.092,1.092v7.641c0,0.602-0.488,1.092-1.092,1.092c-0.602,0-1.092-0.488-1.092-1.092v-7.641
                         c0-0.602-0.488-1.092-1.092-1.092c-0.602,0-1.092,0.488-1.092,1.092v7.641c0,0.602-0.488,1.092-1.092,1.092
                         s-1.092-0.488-1.092-1.092v-7.641c0-0.602-0.488-1.092-1.092-1.092c-0.602,0-1.092,0.488-1.092,1.092v7.641
                         c0,3.403,0.711,6.284,3.275,7.274l0.229,26.453c0,1.206,0.978,2.183,2.183,2.183c1.206,0,2.183-0.978,2.183-2.183l-0.229-26.453
-                        c2.564-0.989,3.275-3.871,3.275-7.274v-7.641C149.499,112.582,149.011,112.092,148.407,112.092z" class="svg-elem-15"></path>
-                    <g id="g180" display="none">
+                        c2.564-0.989,3.275-3.871,3.275-7.274v-7.641C149.499,112.582,149.011,112.092,148.407,112.092z"
+              class="svg-elem-15"></path>
+        <g id="g180" display="none">
                         <g id="g178" display="inline">
                             <path id="path176" fill="#98A9B4" stroke="#98A9B4" stroke-miterlimit="10" d="M171.188,112.327
                                 c-4.148,0-7.511,4.323-7.511,9.201c0,2.969,1.341,5.587,2.979,7.218c1.438,1.432,2.322,2.535,2.498,4.927l0.229,21.122
                                 c0,1.094,0.852,1.982,1.904,1.982l0,0c1.051,0,2.161-0.888,2.161-1.982l-0.229-21.122c0.177-2.392,1.06-3.495,2.498-4.927
-                                c1.639-1.63,2.979-4.249,2.979-7.218C178.697,116.648,175.333,112.327,171.188,112.327z" class="svg-elem-16"></path>
+                                c1.639-1.63,2.979-4.249,2.979-7.218C178.697,116.648,175.333,112.327,171.188,112.327z"
+                                  class="svg-elem-16"></path>
                         </g>
                     </g>
-                    <g id="g188">
+        <g id="g188">
                         <path id="path182" fill="#BDBDBD" stroke="#000000" stroke-miterlimit="10" d="M145.136,104.032
                             c3.834-1.707,8.625,0.783,12.018,8.402c1.423,3.195,0.442,6.813-2.171,8.948l17.571,38.002c0.569,1.278,0.005,2.855-1.309,3.41
                             c-1.278,0.569-2.805-0.017-3.41-1.309l-16.004-38.582c-3.43,0.762-7.051-0.954-8.54-4.296
                             C139.948,110.966,141.338,105.753,145.136,104.032z" class="svg-elem-17"></path>
-                        <path id="path184" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M143.416,108.205
+            <path id="path184" fill="none" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M143.416,108.205
                             c0.354-0.924,0.881-1.659,1.616-2.192" class="svg-elem-18"></path>
-                        <path id="path186" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M143.659,114.928
+            <path id="path186" stroke="#000000" stroke-linecap="round" stroke-miterlimit="10" d="M143.659,114.928
                             c-0.578-1.893-0.778-3.6-0.616-5.086" class="svg-elem-19"></path>
                     </g>
                 </g>
                 </svg>
-    
-            <h4>
-{#                {% for mlg in malagasy_day %}#}
-{#                    {% if day == mlg.name %}#}
-{#                        {{ mlg.traduction }}#}
-{#                    {% endif %}#}
-{#                {% endfor %}#}
-                {{ date }}
-{#                {% for mlg in malagasy_month %}#}
-{#                    {% if month == mlg.name %}#}
-{#                        {{ mlg.traduction }}#}
-{#                    {% endif %}#}
-{#                {% endfor %}#}
-{#                {{ year }}#}
-{#                {{ day }}#}
-            </h4>
-            <p class="mt-3">Leo ny mitady laoka isan'andro? Tsindrio ny bokotra</p>
-            <a type="button" class="btn btn-primary rounded-5 mb-3" style="width: 300px" id="randomBtn">
-                <span id="randomBtnText">Hisafidy</span>
-                <div id="randomBtnSpinner" class="spinner-border spinner-border-sm text-light" hidden>
-                    <span class="visually-hidden">Loading...</span>
-                </div>
-            </a>
-            <h2 class="mb-3" id="randomResult">Initial</h2>
-            <p>
-                <a id="showRecipeLink" href="" class="text-decoration-none mt-3">Hijery ny fomba fikarakarana (recette)</a>
-            </p>
-            {% if(app.user) %}
-                <a href="{{ path('add_plat') }}" class="text-decoration-none mt-3">Hanampy laoka vaovao</a><br>
-                <a href="{{ path('plat_list') }}" class="text-decoration-none mt-3">Hijery ny laoka rehetra misy</a>
-            {% endif %}
-        </div>
-    </div>
-
-    </section>
-
-{% endblock %}
-
-{% block javascripts %}
-    {{ encore_entry_script_tags('custom') }}
-{% endblock %}
-

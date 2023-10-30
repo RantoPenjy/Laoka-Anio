@@ -14,10 +14,6 @@ import { Tooltip, Toast, Popover } from 'bootstrap';
 // start the Stimulus application
 import './bootstrap';
 
-import 'jquery';
-const $ = require('jquery');
-global.$ = global.jQuery = $;
-
 // Datatable (jquery plugin) for bootstrap
 import 'datatables.net/js/jquery.dataTables.js';
 import 'datatables.net-bs5/js/dataTables.bootstrap5';
@@ -29,5 +25,9 @@ require('@fortawesome/fontawesome-free/css/all.min.css');
 require('@fortawesome/fontawesome-free/js/all.js');
 
 // Animejs library
-import 'animejs/lib/anime.es.js';
-const anime = require('animejs');
+import anime from 'animejs';
+
+// SB Admin 2 templates library
+import 'startbootstrap-sb-admin-2/js/sb-admin-2';
+
+import 'animate.css'
